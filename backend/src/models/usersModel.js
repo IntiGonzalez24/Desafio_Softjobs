@@ -13,11 +13,12 @@ export const createUserModel=async(email,password,rol,lenguage)=>{
     return response.rows[0]
 }
 
-export const findUserByEmail=async(email)=>{
+export const findUserByEmail= async(email)=>{
     const SQLQuery={
-        text:'SELECT * FROM USUARIOS WHERE email= $1',
+        text:'SELECT * FROM USUARIOS WHERE email = $1',
         values:[email]
     }
     const response = await pool.query(SQLQuery)
     return response.rows[0]
+
 }
